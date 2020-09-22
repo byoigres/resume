@@ -1,0 +1,145 @@
+:root {
+  --base-font: 16px;
+  --cover-bg-color: #536878;
+  --cover-tex-color: #fff;
+  --font-family-primary: "Oxygen";
+  --font-family-secondary: "Open Sans";
+  --color-text: #000;
+  --color-grey: #C0C6CB;
+  --flex-small-column-size: 20%;
+  --flex-large-column-size: 80%;
+}
+
+html,
+body {
+  font-size: var(--base-font);
+  font-family: var(--font-family-primary), sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+  margin: 1rem;
+}
+
+.cover {
+  background-color: var(--cover-bg-color);
+  color: var(--cover-tex-color);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.title {
+  font-size: 7rem;
+}
+
+.title .last-name {
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 3rem;
+}
+
+#panels {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+#contact-info {
+  flex-basis: var(--flex-small-column-size);
+}
+
+#selected-projects {
+  flex-basis: var(--flex-large-column-size);
+}
+
+#dev-skills {
+  flex-basis: var(--flex-small-column-size);
+}
+
+#experience {
+  flex-basis: var(--flex-large-column-size);
+}
+
+#languages {
+  flex-basis: var(--flex-small-column-size);
+}
+
+#education {
+  flex-basis: var(--flex-large-column-size);
+}
+
+.panel {
+    flex: 1;
+    font-family: var(--font-family-secondary);
+}
+
+.panel-title {
+  font-weight: bold;
+  font-size: 2.5rem;
+  font-family: var(--font-family-primary);
+}
+
+.panel-title.contact-info {
+    color: #ff0000;
+}
+
+.panel-title.selected-projects {
+    color: #4a86e8;
+}
+
+.panel-title.dev-skills {
+    color: #ff9900;
+}
+
+.panel-title.languages {
+    color: #ff00ff;
+}
+
+.panel-title.experience {
+    color: #00ff00;
+}
+
+.panel-title.education {
+    color: #9900ff;
+}
+
+.panel-item {
+    font-size: 1.5rem;
+}
+
+.panel-item .text {
+  color: var(--color-text);
+}
+
+.panel-item .text-grey {
+  color: var(--color-grey);
+}
+
+.panel-item .bold {
+  font-weight: bold;
+}
+
+.panel-item a:link,
+.panel-item a:visited,
+.panel-item a:hover,
+.panel-item a:active {
+    color: #000;
+}
+
+/* .panel .list {} */
+
+.panel .list .list-item {
+   padding-left: 1.5em;
+   text-indent: -1.1em;
+}
+
+.panel .list .list-item:before {
+  content: "⌁";
+  padding-right: 5px;
+  font-weight: bold;
+}
