@@ -1,0 +1,42 @@
+main {
+  margin: 0;
+}
+.cover {
+  padding: 3rem 0;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+.panel-title {
+  font-size: 1.5rem;
+}
+
+.panel-item {
+  font-size: 0.9rem;
+}
+
+#contact-info {
+  flex-basis: 25%;
+}
+
+#selected-projects {
+  flex-basis: 75%;
+}
+
+#dev-skills {
+  flex-basis: 25%;
+}
+
+#experience {
+  flex-basis: 75%;
+}
+
+#languages {
+  flex-basis: 25%;
+}
+
+#education {
+  flex-basis: 75%;
+}
