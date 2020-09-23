@@ -1,0 +1,8 @@
+{
+  "watchFolder": "styles",
+  "outputFolder": "docs",
+  "mainFile": "styles.less",
+  "runOnce": true,
+  "sourceMap": true,
+  "minified": true
+}
