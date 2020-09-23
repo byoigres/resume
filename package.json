@@ -1,0 +1,29 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "Just HTML and CSS.",
+  "main": "index.js",
+  "scripts": {
+    "start": "run-p watch-less serve",
+    "serve": "browser-sync start --server --no-open --files 'index.html' 'css/styles.css'",
+    "watch-less": "less-watch-compiler",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byoigres/resume.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/byoigres/resume/issues"
+  },
+  "homepage": "https://github.com/byoigres/resume#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "less": "^3.12.2",
+    "less-watch-compiler": "^1.14.6",
+    "npm-run-all": "^4.1.5"
+  }
+}
