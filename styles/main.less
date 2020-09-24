@@ -10,6 +10,12 @@
   --flex-large-column-size: 80%;
 }
 
+#linear-text-gradient (@color) {
+  background: linear-gradient(to right, @color 0%, darken(@color, 15%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 html,
 body {
   font-size: @base-font;
@@ -79,27 +85,27 @@ main {
     text-align: center;
 
     &.contact-info {
-        color: @contact-info-color;
+        #linear-text-gradient(@contact-info-color);
     }
 
     &.selected-projects {
-        color: @selected-projects-color;
+        #linear-text-gradient(@selected-projects-color);
     }
 
     &.dev-skills {
-        color: @dev-skills-color;
+        #linear-text-gradient(@dev-skills-color);
     }
 
     &.languages {
-        color: @languages-color;
+        #linear-text-gradient(@languages-color);
     }
 
     &.experience {
-        color: @experience-color;
+        #linear-text-gradient(@experience-color);
     }
 
     &.education {
-        color: @education-color;
+        #linear-text-gradient(@education-color);
     }
   }
 
