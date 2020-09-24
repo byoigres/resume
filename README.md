@@ -1,9 +1,15 @@
-# My resume
+# This is my resume
 
 Just HTML and CSS.
 
-## Edit with
+## Prerequisites
 
-```bash
-browser-sync start --server --files "css/*.css"
-```
+First install less globally with `npm install less`
+
+## Run
+
+Just type `npm start`
+
+## Build
+
+Execute `npm run build`
