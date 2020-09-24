@@ -7,9 +7,10 @@
     "start": "run-p watch-less serve",
     "serve": "browser-sync start --server --no-open --files 'index.html' 'css/styles.css'",
     "watch-less": "less-watch-compiler --config less-watch-compiler.dev.config.json",
-    "build": "run-p minify-html build-css",
+    "build": "run-p minify-html build-css copy-images",
     "minify-html": "html-minifier --collapse-whitespace --remove-comments --remove-optional-tags --remove-redundant-attributes --remove-script-type-attributes index.html | sed 's/styles.css/styles.min.css/g' > docs/index.html",
     "build-css": "less-watch-compiler --config less-watch-compiler.prod.config.json",
+    "copy-images": "cp -r images/ docs/images",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
