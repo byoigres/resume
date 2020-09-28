@@ -2,40 +2,125 @@
   main {
     margin: 0;
   }
+
   .cover {
-    padding: 3rem 0;
+    padding: 0rem 0;
 
-    .title {
-      font-size: 3rem;
-    }
-  }
+    flex-direction: column;
 
-  .panel {
-    .panel-title {
-      font-size: 1.5rem;
+    .logo {
+      display: none;
     }
 
-    .panel-content {
-      .panel-item {
-        font-size: 0.8rem;
+    .information {
+      .title {
+        font-size: 3.5rem;
+      }
+
+      .description {
+        font-size: 1rem;
+        text-align: justify;
+        line-height: 1.5;
+        margin-bottom: 20px;
+
+        > p {
+          text-align: justify;
+        }
       }
     }
   }
-  
 
-  #contact-info, #dev-skills, #languages {
-    flex-basis: 25%;
+  .panels {
+    .left {
+      flex-basis: 25%;
+    }
+
+    .right {
+      flex-basis: 75%;
+    }
+
+    .panel {
+      .panel-title {
+        font-size: 1.3rem;
+
+        &.contact-info {
+          color: @contact-info-color;
+          background: none;
+          background-color: none;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: unset;
+        }
+
+        &.selected-projects {
+          color: @selected-projects-color;
+          background: none;
+          background-color: none;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: unset;
+        }
+
+        &.dev-skills {
+          color: @dev-skills-color;
+          background: none;
+          background-color: none;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: unset;
+        }
+
+        &.languages {
+          color: @languages-color;
+          background: none;
+          background-color: none;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: unset;
+        }
+
+        &.experience {
+          color: @experience-color;
+          background: none;
+          background-color: none;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: unset;
+        }
+
+        &.education {
+          color: @education-color;
+          background: none;
+          background-color: none;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: unset;
+        }
+      }
+
+      .panel-content {
+        .panel-item {
+          font-size: 0.8rem;
+
+          &.display-hidden {
+            display: block;
+          }
+
+          .list {
+            .list-item {
+              .skill {
+                font-size: 0.3rem;
+                margin: 0 0rem;
+                padding: 0.1rem 0.3rem;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
-  #selected-projects, #experience, #education {
-    flex-basis: 75%;
+  .skill {
+    font-size: 0.5rem;
+    // margin: 0 0rem;
+    // padding: 0.1rem 0.3rem;
   }
 
-  #separators {
-    display: none;
-  }
-
-  #know-more {
+ .know-more {
     display: flex;
     page-break-before: always;
     width: 100vw;
