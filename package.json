@@ -1,7 +1,7 @@
 {
   "name": "resume",
-  "version": "1.2.1",
-  "description": "Just HTML and CSS.",
+  "version": "1.2.2",
+  "description": "My HTML and CSS resume.",
   "main": "index.js",
   "scripts": {
     "start": "run-p watch-less serve",
