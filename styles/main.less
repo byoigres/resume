@@ -12,9 +12,14 @@ body {
 
 a {
   text-decoration: none;
+
+  &:hover {
+    opacity: 0.75;
+    text-decoration: underline;
+  }
+
   &:link,
   &:visited,
-  &:hover,
   &:active {
     color: black;
   }
@@ -83,6 +88,7 @@ main {
       font-size: 1.37rem;
       line-height: 1.5;
       text-align: justify;
+      font-style: italic;
 
       > p {
         margin: 0 20px;
@@ -127,8 +133,8 @@ main {
         #linear-text-gradient(@contact-info-color);
       }
 
-      &.selected-projects {
-        #linear-text-gradient(@selected-projects-color);
+      &.featured-projects {
+        #linear-text-gradient(@featured-projects-color);
       }
 
       &.dev-skills {
@@ -157,6 +163,10 @@ main {
         }
 
         &.display-hidden {
+          display: none;
+        }
+
+        &.display-never {
           display: none;
         }
 
@@ -236,16 +246,16 @@ main {
 }
 
 .know-more {
+  position: fixed;
+  margin: 0 1rem;
+  bottom: 0;
+  width: 100%;
   display: none;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: center;
-
-  img {
-    height: 256px;
-    width: 334px;
-  }
+  font-size: 0.75rem;
 
   a {
     text-decoration: underline;
