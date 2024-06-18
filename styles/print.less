@@ -2,48 +2,107 @@
   main {
     margin: 0;
   }
+
   .cover {
-    padding: 3rem 0;
+    padding: 0rem 0;
 
-    .title {
-      font-size: 3rem;
-    }
-  }
+    flex-direction: column;
 
-  .panel {
-    .panel-title {
-      font-size: 1.5rem;
+    .logo {
+      display: none;
     }
 
-    .panel-content {
-      .panel-item {
-        font-size: 0.8rem;
+    .information {
+      .title {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .description {
+        font-size: 0.75rem;
+        text-align: justify;
+        line-height: 1.5;
+        margin-bottom: 0.5rem;
+
+        > p {
+          text-align: justify;
+        }
       }
     }
   }
-  
 
-  #contact-info {
-    flex-basis: 25%;
+  .panels {
+    padding: 0;
+    .left {
+      flex-basis: calc(25% - @flex-left-column-right-margin);
+      margin-right: calc(@flex-left-column-right-margin / 2);
+      margin-left: calc(@flex-left-column-right-margin / 2);
+    }
+
+    .right {
+      flex-basis: calc(75% - @flex-left-column-right-margin);
+      margin-right: calc(@flex-left-column-right-margin / 2);
+      margin-left: calc(@flex-left-column-right-margin / 2);
+    }
+
+    .panel {
+      .panel-title {
+        font-size: 1.3rem;
+
+        background: none;
+        background-color: none;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: unset;
+
+        &.contact-info {
+          color: @contact-info-color;
+        }
+
+        &.selected-projects {
+          color: @featured-projects-color;
+        }
+
+        &.dev-skills {
+          color: @dev-skills-color;
+        }
+
+        &.languages {
+          color: @languages-color;
+        }
+
+        &.experience {
+          color: @experience-color;
+        }
+
+        &.education {
+          color: @education-color;
+        }
+      }
+
+      .panel-content {
+        .panel-item {
+          font-size: 0.8rem;
+
+          &.display-hidden {
+            display: block;
+          }
+
+          .list {
+            .list-item {
+              .skill {
+                font-size: 0.3rem;
+                margin: 0 0rem;
+                padding: 0.1rem 0.3rem;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 
-  #selected-projects {
-    flex-basis: 75%;
-  }
-
-  #dev-skills {
-    flex-basis: 25%;
-  }
-
-  #experience {
-    flex-basis: 75%;
-  }
-
-  #languages {
-    flex-basis: 25%;
-  }
-
-  #education {
-    flex-basis: 75%;
+  .skill {
+    font-size: 0.5rem;
   }
 }

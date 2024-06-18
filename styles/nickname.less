@@ -1,0 +1,179 @@
+@animation-duration: 8s;
+@animation-delay: 0s;
+
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@700&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes anim-move-letter {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes anim-static-letter {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-180deg);
+  }
+
+  75% {
+    transform: rotate(-180deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes anim-move-letter-reverse {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  25% {
+    transform: rotate(360deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes anim-static-letter-reverse {
+  0% {
+    transform: rotate(-360deg);
+  }
+
+  25% {
+    transform: rotate(-360deg);
+  }
+
+  50% {
+    transform: rotate(-180deg);
+  }
+
+  75% {
+    transform: rotate(-180deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.create-circle(@name, @square-size, @letter-box-size, @background-color, @position-top, @position-left, @z-index, @is-reverse: false) {
+  .@{name}-group {
+    position: absolute;
+    top: @position-top;
+    left: @position-left;
+    background-color: @background-color;
+    width: @square-size;
+    height: @square-size;
+    margin: @letter-box-size / 2;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 50%;
+    transform: rotate(0deg);
+    transition: transform 0.7s linear;
+    animation-duration: @animation-duration;
+    animation-delay: @animation-delay;
+    animation-iteration-count: infinite;
+    animation-name: if(@is-reverse, anim-move-letter-reverse, anim-move-letter);
+    z-index: @z-index;
+
+    .letter {
+      position: absolute;
+      border-radius: 50%;
+      transform: rotate(0deg);
+      transition: transform 0.7s linear;
+      animation-duration: @animation-duration;
+      animation-delay: @animation-delay;
+      animation-iteration-count: infinite;
+      animation-name: if(@is-reverse, anim-static-letter-reverse, anim-static-letter);
+      top: (@square-size / 2) - (@letter-box-size / 2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &.letter-left {
+        
+        width: @letter-box-size;
+        height: @letter-box-size;
+        left: (@letter-box-size / 2) * -1;
+      }
+
+      &.letter-right {
+        width: @letter-box-size;
+        height: @letter-box-size;
+        right: (@letter-box-size / 2) * -1;
+      }
+    }
+  }
+}
+
+@base-size: 6;
+@r-and-g-size: 30px * @base-size;
+@e-and-i-size: 80px * @base-size;
+@s-and-o-size: 130px * @base-size;
+
+@letter-box-size: 20px * @base-size;
+@letter-spacing: 45px * @base-size;
+
+.container {
+  display: flex;
+  justify-content: center;
+  font-size: @letter-box-size;
+  font-family: "Zilla Slab";
+  text-transform: uppercase;
+
+  .circles-box {
+    background-color: deepskyblue;
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    .fixed {
+      position: absolute;
+      top: @s-and-o-size / 2;
+      letter-spacing: 10px;
+    }
+
+    .create-circle(r-and-g, @r-and-g-size, @letter-box-size, white, (@s-and-o-size - @r-and-g-size) / 2, ((@s-and-o-size - @r-and-g-size) / 2) + @letter-spacing, 14);
+    .create-circle(e-and-i, @e-and-i-size, @letter-box-size, white, (@s-and-o-size - @e-and-i-size) / 2, ((@s-and-o-size - @e-and-i-size) / 2) + @letter-spacing, 12, true);
+    .create-circle(s-and-o, @s-and-o-size, @letter-box-size, white, 0px, @letter-spacing, 10);
+  }
+}
