@@ -4,7 +4,7 @@
   "description": "My HTML and CSS resume.",
   "main": "index.js",
   "scripts": {
-    "start": "run-p watch-less serve",
+    "dev": "run-p watch-less serve",
     "serve": "browser-sync start --server --no-open --files 'index.html' 'css/styles.css'",
     "watch-less": "less-watch-compiler --config less-watch-compiler.dev.config.json",
     "build": "run-p minify-html build-css",
