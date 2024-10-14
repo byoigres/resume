@@ -47,61 +47,67 @@
 
     .panel {
       .panel-title {
-        font-size: 1.3rem;
+      font-size: 1.3rem;
 
-        background: none;
-        background-color: none;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: unset;
+      background: none;
+      background-color: none;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: unset;
 
-        &.contact-info {
-          color: @contact-info-color;
-        }
+      &.contact-info {
+        color: @contact-info-color;
+      }
 
-        &.selected-projects {
-          color: @featured-projects-color;
-        }
+      &.selected-projects {
+        color: @featured-projects-color;
+      }
 
-        &.dev-skills {
-          color: @dev-skills-color;
-        }
+      &.dev-skills {
+        color: @dev-skills-color;
+      }
 
-        &.languages {
-          color: @languages-color;
-        }
+      &.languages {
+        color: @languages-color;
+      }
 
-        &.experience {
-          color: @experience-color;
-        }
+      &.experience {
+        color: @experience-color;
+      }
 
-        &.education {
-          color: @education-color;
-        }
+      &.education {
+        color: @education-color;
+      }
       }
 
       .panel-content {
-        .panel-item {
-          font-size: 0.8rem;
+      .panel-item {
+        font-size: 0.8rem;
 
-          &.display-hidden {
-            display: block;
-          }
+        &.display-hidden {
+        display: block;
+        }
 
-          &.page-jump-print-mode {
-            margin-top: 5rem;
-            padding-top: 2rem;
-          }
+        &.page-jump-print-mode {
+        margin-top: 5rem;
+        padding-top: 2rem;
+        }
 
-          .list {
-            .list-item {
-              .skill {
-                font-size: 0.3rem;
-                margin: 0 0rem;
-                padding: 0.1rem 0.3rem;
-              }
-            }
+        .list {
+        .list-item {
+          .skill {
+          font-size: 0.3rem;
+          margin: 0 0rem;
+          padding: 0.1rem 0.3rem;
           }
+        }
+        }
+      }
+      }
+
+      &.experience, &.featured-projects {
+        a {
+          text-decoration: underline dotted;
         }
       }
     }
